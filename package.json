@@ -1,0 +1,13 @@
+{
+  "name": "ffmpeg-utils",
+  "version": "0.1.0",
+  "description": "A package to make ffmpeg templates and helper functions",
+  "main": "index.js",
+  "repository": "git@github.com:BraidIt/ffmpeg-utils.git",
+  "author": "Jeff Rohalla <jeff@braidit.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tsc": "^2.0.4",
+    "typescript": "^5.1.3"
+  }
+}
