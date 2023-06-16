@@ -1,3 +1,4 @@
+#!/bin/sh
 #  This file contains example bash scripts to accomplish various FFMPEG tasks
 
 # watermark in bottom left corner
@@ -13,5 +14,5 @@
 
 # attach endroll to end of video
 
-file_name = "text"
+file_name="text"
 echo $file_name
