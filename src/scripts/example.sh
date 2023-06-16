@@ -12,3 +12,6 @@
 # attach preroll to beginning of video
 
 # attach endroll to end of video
+
+file_name = "text"
+echo $file_name
