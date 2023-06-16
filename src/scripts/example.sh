@@ -1,4 +1,10 @@
 #!/bin/sh
+
+input_1=$1
+input_2=$2
+
+echo "Input 1: $input_1"
+echo "Input 2: $input_2"
 #  This file contains example bash scripts to accomplish various FFMPEG tasks
 
 # watermark in bottom left corner
@@ -16,3 +22,7 @@
 
 file_name="text"
 echo $file_name
+for i in {1..10}
+do
+  echo "Welcome $i times"
+done
