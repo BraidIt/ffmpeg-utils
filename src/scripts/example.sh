@@ -21,8 +21,10 @@ echo "Input 2: $input_2"
 # attach endroll to end of video
 
 file_name="text"
+echo "new file beings:" > $input_1
+touch $input_1
 echo $file_name
 for i in {1..10}
 do
-  echo "Welcome $i times"
+  echo "Welcome $i times\n" >> $input_1
 done
