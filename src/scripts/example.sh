@@ -24,36 +24,31 @@ echo "Input 2: $input_2"
 
 # attach preroll to beginning of video
 #ffmpeg -i intro.mp4 -i sample.mp4  -filter_complex "[0:v][0:a][1:v][1:a]concat=n=2:v=1:a=1[v][a]" -map "[v]" -map "[a]" output.mp4
-: '
-intro.mp4 must have an audio stream
-'
+#*intro.mp4 must have an audio stream
+
 # attach endroll to end of video
-# ffmpeg -i sample.mp4 -i outro.mp4 -filter_complex "[0:v][0:a][1:v][1:a]concat=n=2:v=1:a=1[v][a]" -map "[v]" -map "[a]" output.mp4
-: '
-outro.mp4 must have an audio stream
-'
+#ffmpeg -i sample.mp4 -i outro.mp4 -filter_complex "[0:v][0:a][1:v][1:a]concat=n=2:v=1:a=1[v][a]" -map "[v]" -map "[a]" output.mp4
+#*outro.mp4 must have an audio stream
+
 
 # text in bottom fifth (?) corner
-# ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':font=ariel:fontsize=50:fontcolor=white:x=144:y=h-th-50:shadowx=0:shadowy=0:box=0:boxcolor=black@0.5:boxborderw=10" -c:a copy output.mp4
-: '
-Examples:
-ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':fontsize=50:fontcolor=white:x=144:y=h-th-50" -c:a copy output.mp4
-  - Adds basic text
-
-ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':font=ariel:fontsize=50:fontcolor=white:x=144:y=h-th-50:shadowx=3:shadowy=3:box=0:boxcolor=black@0.5:boxborderw=12" -c:a copy output.mp4
-  - Adds a dropshadow to the text
-
-ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':font=ariel:fontsize=50:fontcolor=white:x=144:y=h-th-50:shadowx=0:shadowy=0:box=1:boxcolor=black@0.5:boxborderw=12" -c:a copy output.mp4
-  - Adds a transparent box around the text
-
-echo >> temp.txt "line one\nline two"
-ffmpeg -i sample.mp4 -vf "drawtext=textfile=temp.txt:font=ariel:fontsize=50:fontcolor=white:x=144:y=h-th-50:line_spacing=8:shadowx=0:shadowy=0:box=1:boxcolor=black@0.5:boxborderw=12" -c:a copy output.mp4
-rm temp.txt
-  - Adds multiple lines of text
-  
-ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':fontfile=SResistMedium.otf:fontsize=50:fontcolor=white:x=144:y=h-th-50:shadowx=3:shadowy=3:box=0:boxcolor=black@0.5:boxborderw=10" -c:a copy output.mp4
-  - Uses a font file to change the font of the text
-'
+#ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':font=ariel:fontsize=50:fontcolor=white:x=144:y=h-th-50:shadowx=0:shadowy=0:box=0:boxcolor=black@0.5:boxborderw=10" -c:a copy output.mp4
+#Examples:
+#   ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':fontsize=50:fontcolor=white:x=144:y=h-th-50" -c:a copy output.mp4
+#     - Adds basic text
+#   ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':font=ariel:fontsize=50:fontcolor=white:x=144:y=h-th-50:shadowx=3:shadowy=3:box=0:boxcolor=black@0.5:boxborderw=12" -c:a copy output.mp4
+#     - Adds a dropshadow to the text
+#
+#   ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':font=ariel:fontsize=50:fontcolor=white:x=144:y=h-th-50:shadowx=0:shadowy=0:box=1:boxcolor=black@0.5:boxborderw=12" -c:a copy output.mp4
+#     - Adds a transparent box around the text
+#
+#   echo >> temp.txt "line one\nline two"
+#   ffmpeg -i sample.mp4 -vf "drawtext=textfile=temp.txt:font=ariel:fontsize=50:fontcolor=white:x=144:y=h-th-50:line_spacing=8:shadowx=0:shadowy=0:box=1:boxcolor=black@0.5:boxborderw=12" -c:a copy output.mp4
+#   rm temp.txt
+#     - Adds multiple lines of text
+#
+#   ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':fontfile=SResistMedium.otf:fontsize=50:fontcolor=white:x=144:y=h-th-50:shadowx=3:shadowy=3:box=0:boxcolor=black@0.5:boxborderw=10" -c:a copy output.mp4
+#     - Uses a font file to change the font of the text
 
 
 
