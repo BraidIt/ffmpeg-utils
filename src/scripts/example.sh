@@ -32,7 +32,7 @@ echo "Input 2: $input_2"
 
 
 # text in bottom fifth (?) corner
-#ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':font=ariel:fontsize=50:fontcolor=white:x=144:y=h-th-50:shadowx=0:shadowy=0:box=0:boxcolor=black@0.5:boxborderw=10" -c:a copy output.mp4
+#ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':font=ariel:fontsize=50:fontcolor=white:x=144:y=h-th-50:shadowx=0:shadowy=0:box=0:boxcolor=black@0.5:boxborderw=12" -c:a copy output.mp4
 #Examples:
 #   ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':fontsize=50:fontcolor=white:x=144:y=h-th-50" -c:a copy output.mp4
 #     - Adds basic text
@@ -47,8 +47,11 @@ echo "Input 2: $input_2"
 #   rm temp.txt
 #     - Adds multiple lines of text
 #
-#   ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':fontfile=SResistMedium.otf:fontsize=50:fontcolor=white:x=144:y=h-th-50:shadowx=3:shadowy=3:box=0:boxcolor=black@0.5:boxborderw=10" -c:a copy output.mp4
+#   ffmpeg -i sample.mp4 -vf "drawtext=text='Sample Text':fontfile=SResistMedium.otf:fontsize=50:fontcolor=white:x=144:y=h-th-50:shadowx=3:shadowy=3:box=0:boxcolor=black@0.5:boxborderw=12" -c:a copy output.mp4
 #     - Uses a font file to change the font of the text
+
+# Text with chyron
+#ffmpeg -i sample.mp4 -vf "drawbox=45:ih-h-51:305:81:color=red@1:t=fill, drawbox=50:ih-h-50:iw-100:50:color=white@1:t=fill, drawtext=text='TEXT LINE ONE':fontfile=SResistMedium.otf:fontsize=30:fontcolor=white:x=55:y=h-th-105, drawtext=text='TEXT LINE TWO':fontfile=SResistMedium.otf:fontsize=50:fontcolor=black:x=55:y=h-th-55" -c:a copy output.mp4
 
 
 
