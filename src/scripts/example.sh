@@ -53,7 +53,29 @@ echo "Input 2: $input_2"
 # Text with chyron
 #ffmpeg -i sample.mp4 -vf "drawbox=45:ih-h-51:305:81:color=red@1:t=fill, drawbox=50:ih-h-50:iw-100:50:color=white@1:t=fill, drawtext=text='TEXT LINE ONE':fontfile=SResistMedium.otf:fontsize=30:fontcolor=white:x=55:y=h-th-105, drawtext=text='TEXT LINE TWO':fontfile=SResistMedium.otf:fontsize=50:fontcolor=black:x=55:y=h-th-55" -c:a copy output.mp4
 
-
+# subtitles
+#ffmpeg -i captionV.mp4 -vf "subtitles=caption.vtt:force_style='Fontsize=11,borderstyle=1,outline=1,shadow=0,fontname=Arial'" output.mp4
+#   ffmpeg -i captionV.mp4 -vf "subtitles=caption.vtt:force_style='Fontsize=11,borderstyle=1,outline=1,shadow=0,fontname=Arial'" output.mp4
+#     - Changes font
+#
+#   ffmpeg -i captionV.mp4 -vf "subtitles=caption.vtt:force_style='fontsize=11,borderstyle=3,outline=1,shadow=0,outlinecolor=&H10000000fontname=Arial'" output.mp4
+#     - box (can be transparent)
+#
+#   ffmpeg -i captionV.mp4 -vf "subtitles=caption.vtt:force_style='fontsize=11,borderstyle=1,outline=0,shadow=0,fontname=Arial'" output.mp4
+#     - Removes text outline
+#
+#   ffmpeg -i captionV.mp4 -vf "subtitles=caption.vtt:force_style='fontsize=14,borderstyle=1,outline=0,shadow=0,fontname=Arial'" output.mp4
+#     - Changes font size
+# 
+#   ffmpeg -i captionV.mp4 -vf "subtitles=caption.vtt:force_style='fontsize=14,borderstyle=1,outline=0,shadow=0,fontname=Arial,primarycolour=&HFFFF00'" output.mp4
+#     - Changes text color
+#     - Uses hexidecimal in the format &HBBGGRR
+#
+#   ffmpeg -i captionV.mp4 -vf "subtitles=caption.vtt:force_style='fontsize=11,borderstyle=3,outline=1,shadow=0,outlinecolor=&H10000000fontname=Arial,alignment=10'" output.mp4
+#     - Sets position of subtitles to top of screen.
+#
+#   ffmpeg -i captionV.mp4 -vf "subtitles=caption.vtt:force_style='fontsize=11,borderstyle=3,outline=1,shadow=0,outlinecolor=&H10000000fontname=Arial,alignment=6'" output.mp4
+#     - Sets position of subtitles to middle of screen.
 
 file_name="text"
 echo "new file beings:" > $input_1
